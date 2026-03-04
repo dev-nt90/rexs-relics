@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://gh40tw2rkq50"]
+
+[ext_resource type="PackedScene" uid="uid://6a1y46tq6v77" path="res://asset_import/kenney_survival-kit/Models/GLB format/tree-tall.glb" id="1_4xyj8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xyj8"]
+size = Vector3(0.12582397, 0.85546875, 0.1395874)
+
+[node name="Tree" type="StaticBody3D" unique_id=1830279710]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="tree-tall2" parent="." unique_id=419741973 instance=ExtResource("1_4xyj8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1065444408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5258789e-05, 0.58117676, 0.0062561035)
+shape = SubResource("BoxShape3D_4xyj8")

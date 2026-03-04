@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c4qrudun8bdev"]
+
+[ext_resource type="PackedScene" uid="uid://cxa0kms8scaev" path="res://asset_import/kenney_survival-kit/Models/GLB format/rock-a.glb" id="1_x4u58"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wq2r"]
+size = Vector3(0.55737305, 0.38989258, 0.44055176)
+
+[node name="Rock" type="StaticBody3D" unique_id=1112002510]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="rock-a2" parent="." unique_id=1617169606 instance=ExtResource("1_x4u58")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=542071663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022338867, 0.20544434, 0.028381348)
+shape = SubResource("BoxShape3D_0wq2r")

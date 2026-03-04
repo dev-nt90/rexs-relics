@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cbwu2b66amhwi"]
+
+[ext_resource type="Environment" uid="uid://b7q3dli2l1ba6" path="res://resources/default_environment.tres" id="1_7stx0"]
+[ext_resource type="Shader" uid="uid://cvmu4wogr0exc" path="res://scenes/test/zoo.gdshader" id="1_i2neb"]
+[ext_resource type="PackedScene" uid="uid://7g3o7d01gt2a" path="res://scenes/characters/player.tscn" id="1_pjjrw"]
+[ext_resource type="PackedScene" uid="uid://bece6l72mvw25" path="res://scenes/test/position_label.tscn" id="2_gjum1"]
+[ext_resource type="Script" uid="uid://wdb2gmpem5i2" path="res://scenes/test/velocity_label.gd" id="3_lqakx"]
+[ext_resource type="PackedScene" uid="uid://cjvfkhsqepspl" path="res://scenes/characters/player_skin.tscn" id="5_6blqu"]
+[ext_resource type="PackedScene" uid="uid://ck6syma8a2nwu" path="res://scenes/environment/volcano.tscn" id="7_woxov"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2neb"]
+render_priority = 0
+shader = ExtResource("1_i2neb")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0, 0, 0, 1)
+shader_parameter/size = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lqakx"]
+material = SubResource("ShaderMaterial_i2neb")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lqakx"]
+size = Vector3(100, 0.1, 100)
+
+[node name="Zoo" type="Node3D" unique_id=333301638]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1303954373]
+environment = ExtResource("1_7stx0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1629080230]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1460504808 instance=ExtResource("1_pjjrw")]
+
+[node name="PositionLabel" parent="Player" unique_id=1624597626 instance=ExtResource("2_gjum1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+
+[node name="VelocityLabel" type="Label3D" parent="Player" unique_id=613271156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+billboard = 1
+text = "Velocity:"
+font_size = 48
+script = ExtResource("3_lqakx")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1416535542]
+mesh = SubResource("PlaneMesh_lqakx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1963814854]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=202744545]
+shape = SubResource("BoxShape3D_lqakx")
+
+[node name="PlayerModel" type="Node3D" parent="." unique_id=898062348]
+
+[node name="PlayerSkin" parent="PlayerModel" unique_id=7012815 instance=ExtResource("5_6blqu")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 44.654842)
+
+[node name="Volcano" parent="." unique_id=979707839 instance=ExtResource("7_woxov")]
+transform = Transform3D(-4.371139e-06, 0, 100, 0, 100, 0, -100, 0, -4.371139e-06, -171.521, 35, 0)
