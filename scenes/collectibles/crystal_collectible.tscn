@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d4a0c1hbgqc6"]
+
+[ext_resource type="Script" uid="uid://8h1ea1uyeb3o" path="res://scenes/collectibles/crystal_collectible.gd" id="1_du1ye"]
+[ext_resource type="PackedScene" uid="uid://bru85tekynfp4" path="res://scenes/collectibles/crystal.tscn" id="2_du1ye"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cisth"]
+radius = 0.7904806
+
+[node name="CrystalCollectible" type="Area3D" unique_id=294753427]
+script = ExtResource("1_du1ye")
+metadata/_custom_type_script = "uid://bumnsd8jokuwf"
+
+[node name="Crystal" parent="." unique_id=963359804 instance=ExtResource("2_du1ye")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1727789074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6650119, 0)
+shape = SubResource("SphereShape3D_cisth")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

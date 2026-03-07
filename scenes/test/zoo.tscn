@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://wdb2gmpem5i2" path="res://scenes/test/velocity_label.gd" id="3_lqakx"]
 [ext_resource type="PackedScene" uid="uid://cjvfkhsqepspl" path="res://scenes/characters/player_skin.tscn" id="5_6blqu"]
 [ext_resource type="PackedScene" uid="uid://ck6syma8a2nwu" path="res://scenes/environment/volcano.tscn" id="7_woxov"]
+[ext_resource type="PackedScene" uid="uid://d4a0c1hbgqc6" path="res://scenes/collectibles/crystal_collectible.tscn" id="8_cx2to"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2neb"]
 render_priority = 0
@@ -58,3 +59,8 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0
 
 [node name="Volcano" parent="." unique_id=979707839 instance=ExtResource("7_woxov")]
 transform = Transform3D(-4.371139e-06, 0, 100, 0, 100, 0, -100, 0, -4.371139e-06, -171.521, 35, 0)
+
+[node name="Crystals" type="Node3D" parent="." unique_id=1496937279]
+
+[node name="CrystalCollectible" parent="Crystals" unique_id=294753427 instance=ExtResource("8_cx2to")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.07175)

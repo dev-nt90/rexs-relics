@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbv7afgd546i4"]
+
+[ext_resource type="PackedScene" uid="uid://do1mspkbt2lpj" path="res://asset_import/Crystal Pack-glb/Crystal-3saqXqoOti.glb" id="1_o8d61"]
+
+[node name="CrystalRock" type="Node3D" unique_id=1203902442]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Root Scene" parent="." unique_id=1586186546 instance=ExtResource("1_o8d61")]

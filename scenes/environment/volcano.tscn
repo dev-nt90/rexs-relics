@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ck6syma8a2nwu"]
 
+[ext_resource type="Script" uid="uid://dr6n0gvc0mn42" path="res://scenes/environment/volcano.gd" id="1_by46e"]
 [ext_resource type="Texture2D" uid="uid://birld46bcxl0p" path="res://scenes/environment/Volcano_PUSHILIN_volcano.png" id="1_jr7js"]
 [ext_resource type="Texture2D" uid="uid://v0h1fprsmmf3" path="res://textures/smoke_04.png" id="2_ccjv2"]
 
@@ -62,6 +63,7 @@ scale_max = 100.0
 
 [node name="Volcano" type="Node3D" unique_id=979707839]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+script = ExtResource("1_by46e")
 
 [node name="Volcano" type="Node3D" parent="." unique_id=1563918523]
 

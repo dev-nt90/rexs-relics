@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://deyf5sti7j3a1"]
+
+[ext_resource type="PackedScene" uid="uid://bpwyhh8eoqqat" path="res://models/Bird.glb" id="1_33c0c"]
+
+[node name="Bird" type="Node3D" unique_id=423028651]
+
+[node name="Root Scene" parent="." unique_id=1056647088 instance=ExtResource("1_33c0c")]

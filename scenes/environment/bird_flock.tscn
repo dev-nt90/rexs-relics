@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://7n35b0v26jym"]
+
+[ext_resource type="Script" uid="uid://cessejpp0h6i6" path="res://scenes/environment/bird_flock.gd" id="1_7xxai"]
+[ext_resource type="PackedScene" uid="uid://deyf5sti7j3a1" path="res://scenes/environment/bird.tscn" id="1_cgnsq"]
+
+[sub_resource type="Curve3D" id="Curve3D_7xxai"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 35.77118, -33.01005, 25.78424, 0, 0, 0, 0, 0, 0, 67.66002, -97.21814, -12.310822, 0, 0, 0, 0, 0, 0, 217.92632, 15.333389, -142.7202, 0, 0, 0, 0, 0, 0, 98.85063, 30.187943, -73.47156, 0, 0, 0, 0, 0, 0, 53.416397, 27.830116, 59.97162, 0, 0, 0, 0, 0, 0, -11.064115, 4.531746, 32.57582),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[node name="BirdFlock" type="Node3D" unique_id=799410695]
+script = ExtResource("1_7xxai")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1567121203]
+curve = SubResource("Curve3D_7xxai")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1022205633]
+
+[node name="Bird" parent="Path3D/PathFollow3D" unique_id=423028651 instance=ExtResource("1_cgnsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1820318, 0, 0)
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Path3D" unique_id=2070903194]
+
+[node name="Bird" parent="Path3D/PathFollow3D2" unique_id=1193208221 instance=ExtResource("1_cgnsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4958209, 0, 0)
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="Path3D" unique_id=155977139]
+
+[node name="Bird" parent="Path3D/PathFollow3D3" unique_id=1349922942 instance=ExtResource("1_cgnsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.94450724)
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="Path3D" unique_id=174960632]
+
+[node name="Bird" parent="Path3D/PathFollow3D4" unique_id=1355723306 instance=ExtResource("1_cgnsq")]
+
+[node name="PathFollow3D5" type="PathFollow3D" parent="Path3D" unique_id=497472142]
+
+[node name="Bird" parent="Path3D/PathFollow3D5" unique_id=1640844743 instance=ExtResource("1_cgnsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0002775)

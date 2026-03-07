@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_76oj4"]
 height = 2.876587
 
-[node name="Player" type="CharacterBody3D" unique_id=1652126753]
+[node name="Player" type="CharacterBody3D" unique_id=1652126753 groups=["player"]]
 script = ExtResource("1_yewv4")
 metadata/_custom_type_script = "uid://cu6xq0baiqaoj"
 
